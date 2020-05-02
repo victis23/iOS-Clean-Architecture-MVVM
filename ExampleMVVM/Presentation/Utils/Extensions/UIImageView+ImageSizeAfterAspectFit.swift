@@ -22,7 +22,8 @@ extension UIImageView {
 
             if CGFloat(newWidth) > (frame.size.width) {
                 let diff = (frame.size.width) - newWidth
-                newHeight = newHeight + CGFloat(diff) / newHeight * newHeight
+                let modifiedHeight = newHeight + CGFloat(diff) / newHeight * newHeight
+				newHeight = modifiedHeight
                 newWidth = frame.size.width
             }
         } else {
@@ -31,7 +32,8 @@ extension UIImageView {
 
             if newHeight > frame.size.height {
                 let diff = Float((frame.size.height) - newHeight)
-                newWidth = newWidth + CGFloat(diff) / newWidth * newWidth
+                let modifiedWidth = newWidth + CGFloat(diff) / newWidth * newWidth
+				newWidth = modifiedWidth
                 newHeight = frame.size.height
             }
         }

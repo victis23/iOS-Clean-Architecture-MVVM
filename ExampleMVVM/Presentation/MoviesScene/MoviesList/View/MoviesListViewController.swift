@@ -85,7 +85,7 @@ final class MoviesListViewController: UIViewController, StoryboardInstantiable, 
         LoadingView.hide()
 
         switch viewModel.loadingType.value {
-        case .fullScreen: LoadingView.show()
+		case .fullScreen: LoadingView.show(currentView: self.view)
         case .nextPage: moviesListContainer.isHidden = false
         case .none: updateMoviesListVisibility()
         }

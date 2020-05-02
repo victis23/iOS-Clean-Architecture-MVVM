@@ -35,7 +35,8 @@ final class MoviesListTableViewController: UITableViewController {
     func update(isLoadingNextPage: Bool) {
         if isLoadingNextPage {
             nextPageLoadingSpinner?.removeFromSuperview()
-            nextPageLoadingSpinner = UIActivityIndicatorView(style: .gray)
+			nextPageLoadingSpinner = UIActivityIndicatorView(style: .medium)
+			nextPageLoadingSpinner?.color = .gray
             nextPageLoadingSpinner?.startAnimating()
             nextPageLoadingSpinner?.isHidden = false
             nextPageLoadingSpinner?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.frame.width, height: 44)

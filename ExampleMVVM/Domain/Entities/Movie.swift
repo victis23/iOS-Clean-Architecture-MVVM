@@ -20,9 +20,3 @@ struct Movie: Equatable, Identifiable {
     let overview: String?
     let releaseDate: Date?
 }
-
-struct MoviesPage: Equatable {
-    let page: Int
-    let totalPages: Int
-    let movies: [Movie]
-}

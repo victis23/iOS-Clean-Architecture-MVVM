@@ -34,8 +34,11 @@ public final class Observable<Value> {
     }
     
     private func notifyObservers() {
-        for observer in observers {
-           DispatchQueue.main.async { observer.block(self.value) }
-        }
+		
+		observers.forEach { observer in
+			DispatchQueue.main.async {
+				observer.block(self.value)
+			}
+		}
     }
 }

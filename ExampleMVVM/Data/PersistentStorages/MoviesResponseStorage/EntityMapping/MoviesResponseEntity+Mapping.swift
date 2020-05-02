@@ -12,7 +12,9 @@ extension MoviesResponseEntity {
     func toDTO() -> MoviesResponseDTO {
         return .init(page: Int(page),
                      totalPages: Int(totalPages),
-                     movies: movies?.allObjects.map { ($0 as! MovieResponseEntity).toDTO() } ?? [])
+                     movies: movies?.allObjects.map {
+						guard let entity = $0 as? MovieResponseEntity else {fatalError()}
+						return entity.toDTO() } ?? [])
     }
 }
 
